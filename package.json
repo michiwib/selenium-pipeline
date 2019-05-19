@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha test.js --timeout 10000",
-    "tests": "node test.js"
+    "tests": "node test.js",
+    "echotest": "echo inPipeline"
   },
   "author": "mallen",
   "license": "ISC",
