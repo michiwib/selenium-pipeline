@@ -22,7 +22,7 @@ describe("test", async () => {
     it("should perform a test", async () => {
         //let driver = await new Builder().forBrowser('chrome').build();
         let driver = await new Builder()
-            .usingServer("http://10.131.38.117:5555/wd/hub")
+            .usingServer("http://10.130.58.104:5555/wd/hub")
             .withCapabilities(capabilities)
             //.setChromeOptions(new chrome.Options().addArguments('--headless'))
             .build();
