@@ -24,7 +24,7 @@ describe("test", async () => {
         let driver = await new Builder()
             .usingServer("http://10.129.54.76:5555/wd/hub")
             .withCapabilities(capabilities)
-            .setChromeOptions(new chrome.Options().headless().windowSize(screen))
+            .setChromeOptions(new chrome.Options().addArguments('--headless'))
             .build();
         try {
             await driver.get('http://www.google.com/ncr');
