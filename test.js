@@ -1,5 +1,6 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 var assert = require('chai').assert;
+const chrome = require('selenium-webdriver/chrome');
 
 const capabilities = {
     platform: 'LINUX',
@@ -12,10 +13,19 @@ const capabilities = {
     // video: true
 }
 
+const screen = {
+    width: 640,
+    height: 480
+  };
+
 describe("test", async () => {
     it("should perform a test", async () => {
         //let driver = await new Builder().forBrowser('chrome').build();
-        let driver = await new Builder().usingServer("http://10.129.54.76:5555/wd/hub").withCapabilities(capabilities).build();
+        let driver = await new Builder()
+            .usingServer("http://10.129.54.76:5555/wd/hub")
+            .withCapabilities(capabilities)
+            .setChromeOptions(new chrome.Options().headless().windowSize(screen))
+            .build();
         try {
             await driver.get('http://www.google.com/ncr');
             await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);

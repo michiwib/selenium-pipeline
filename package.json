@@ -4,7 +4,7 @@
   "description": "testing setup of jenkins pipeline with grid",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js --timeout 100000",
+    "test": "mocha test.js --timeout 20000",
     "tests": "node test.js",
     "echotest": "echo inPipeline"
   },
