@@ -5,11 +5,11 @@ const capabilities = {
     platform: 'LINUX',
     browserName: 'chrome',
     version: '74.0',
-    resolution: '1280x800',
-    network: true,
-    visual: true,
-    console: true,
-    video: true
+    // resolution: '1280x800',
+    // network: true,
+    // visual: true,
+    // console: true,
+    // video: true
 }
 
 describe("test", async () => {
