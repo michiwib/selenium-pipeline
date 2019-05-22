@@ -22,16 +22,19 @@ describe("test", async () => {
     it("should perform a test", async () => {
         //let driver = await new Builder().forBrowser('chrome').build();
         let driver = await new Builder()
-            .usingServer("http://10.130.58.104:5555/wd/hub")
+            .usingServer("http://10.130.58.191:5555/wd/hub")
             .withCapabilities(capabilities)
             //.setChromeOptions(new chrome.Options().addArguments('--headless'))
             .build();
         try {
-            await driver.get('http://www.google.com/ncr');
-            await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
-            await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+            await driver.get('http://thedemosite.co.uk/savedata.php');
+            await driver.findElement(By.name('username')).sendKeys('webdriver');
+            await driver.findElement(By.name('password')).sendKeys('webdriver123');
+            await driver.findElement(By.name('FormsButton2')).click();
             var loggedTitle = await driver.getTitle();
+            var uName = await driver.findElement(By.xpath('/html/body/table/tbody/tr/td[1]/blockquote/blockquote[2]/blockquote/text()[1]'));
             console.log(loggedTitle);
+            console.log(uName)
         } finally {
             await driver.quit();
         }
