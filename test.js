@@ -32,9 +32,9 @@ describe("test", async () => {
             await driver.findElement(By.name('password')).sendKeys('webdriver123');
             await driver.findElement(By.name('FormsButton2')).click();
             var loggedTitle = await driver.getTitle();
-            var uName = await driver.findElement(By.xpath('/html/body/table/tbody/tr/td[1]/blockquote/blockquote[2]/blockquote/text()[1]'));
-            console.log(loggedTitle);
-            console.log(uName)
+            await console.log(loggedTitle);
+            html = await driver.getPageSource();
+            await console.log(html);
         } finally {
             await driver.quit();
         }
